@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MedReg </title>
+    </head>
+
+    <body>
+        <h1>MedReg</h1>
+        <div>
+            <form method="post">
+                <label for="patientName">Name:</label><input type="text" id="patientName" name="name" />
+                <label for="cnp">CNP:</label><input type="text" id="cnp" name="cnp" />
+               <input type="submit" value="Add" />
+            </form>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>CNP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="patient: ${patientList}">
+                        <td th:text="${patient.name}"></td>
+                        <td th:text="${patient.cnp}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
